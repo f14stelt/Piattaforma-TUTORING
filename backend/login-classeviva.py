@@ -1,7 +1,9 @@
 import json
 import urllib2
+import sys
 
-data = 'cid=&pin=&pwd=Matteo00&target=&uid=G4124356H'
+dati = sys.argv
+data = 'cid=&pin=&pwd='+sys.argv[2]+'&target=&uid='+sys.argv[1]
 
 req = urllib2.Request('https://web.spaggiari.eu/auth-p7/app/default/AuthApi4.php?a=aLoginPwd')
 req.add_header('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
