@@ -11,6 +11,9 @@ response = urllib2.urlopen(req, data)
 
 j = json.loads(response.read())
 if str(j["data"]["auth"]["verified"]) == "False":
-	print "Username o password errati"
+	print("Username o password errati")
 elif str(j["data"]["auth"]["verified"]) == "True":
-	print "Accesso eseguito"
+	print("Accesso eseguito")
+	print(" Nome = "+j["data"]["auth"]["accountInfo"]["nome"])
+	print(" Cognome = "+j["data"]["auth"]["accountInfo"]["cognome"])
+	print(" ID Istituto = "+j["data"]["auth"]["accountInfo"]["cid"])
